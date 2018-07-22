@@ -1,3 +1,6 @@
+<!-- ============================================================== -->
+<!-- Left Sidebar - style you can find in sidebar.scss  -->
+<!-- ============================================================== -->
 <div class="left-sidebar">
     <h2>Category</h2>
     <div class="panel-group category-products" id="accordian"><!--category-productsr-->

@@ -83,7 +83,8 @@
                 <div class="clearfix"> </div>
                 <div class="tab-grids">
                     <div id="tab1" class="tab-grid1">
-                        <a href="single.html"><div class="product-grid">
+                        <a href="single.html">
+                            <div class="product-grid">
                                 <div class="more-product-info"><span>NEW</span></div>
                                 <div class="product-img b-link-stripe b-animate-go  thickbox">
                                     <img src="{{ asset('shop') }}/images/bs1.jpg" class="img-responsive" alt=""/>
@@ -92,7 +93,8 @@
                                             <button class="btns">ORDER NOW</button>
                                         </h4>
                                     </div>
-                                </div></a>
+                                </div>
+                        </a>
                         <div class="product-info simpleCart_shelfItem">
                             <div class="product-info-cust">
                                 <h4>BELLE B&W</h4>
@@ -197,7 +199,8 @@
                         <button class="btns">ORDER NOW</button>
                     </h4>
                 </div>
-            </div></a>
+            </div>
+    </a>
     <div class="product-info simpleCart_shelfItem">
         <div class="product-info-cust">
             <h4>NEW LOOK</h4>
@@ -284,7 +287,8 @@
                         <button class="btns">ORDER NOW</button>
                     </h4>
                 </div>
-            </div>	</a>
+            </div>
+    </a>
     <div class="product-info simpleCart_shelfItem">
         <div class="product-info-cust">
             <h4>NEWLOOK</h4>

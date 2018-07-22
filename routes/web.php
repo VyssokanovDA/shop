@@ -15,6 +15,7 @@ Auth::routes();
 //Route::get('/home', 'HomeController@index')->name('home');
 //Главная страница
 Route::get('/', 'MainController@index')->name('home');
+Route::get('/admin1', 'AdminController@index')->name('admin');
 Route::group(['prefix' => 'test'], function (){
     //Список
     Route::get('/index', 'TestController@index');

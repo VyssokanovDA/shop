@@ -54,7 +54,7 @@
     <!-- ============================================================== -->
     <div class="page-wrapper">
         @yield('content')
-        @include('shop.includes.footer')
+        @include('admin.includes.footer')
     </div>
 </div>
 <!-- ============================================================== -->

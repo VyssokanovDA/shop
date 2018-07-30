@@ -1,165 +1,72 @@
-@extends('admin.layouts.app')
+@extends('admin.app')
 
 @section('title')
     Страница администрирования
 @endsection
 
 @section('content')
+    <div class="page-breadcrumb">
+        <div class="row">
+            <div class="col-5 align-self-center">
+                <h4 class="page-title">Dashboard</h4>
+            </div>
+            <div class="col-7 align-self-center">
+                <div class="d-flex align-items-center justify-content-end">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="#">Home</a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Container fluid  -->
+    <!-- ============================================================== -->
     <div class="container-fluid">
         <!-- ============================================================== -->
-        <!-- Bread crumb and right sidebar toggle -->
-        <!-- ============================================================== -->
-        <div class="row page-titles">
-            <div class="col-md-5 align-self-center">
-                <h3 class="text-themecolor">Dashboard</h3>
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                    <li class="breadcrumb-item active">Dashboard</li>
-                </ol>
-            </div>
-            <div class="col-md-7 align-self-center">
-                <a href="https://wrappixel.com/templates/adminwrap/" class="btn waves-effect waves-light btn btn-info pull-right hidden-sm-down"> Upgrade to Pro</a>
-            </div>
-        </div>
-        <!-- ============================================================== -->
-        <!-- End Bread crumb and right sidebar toggle -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Sales Chart and browser state-->
+        <!-- Email campaign chart -->
         <!-- ============================================================== -->
         <div class="row">
-            <!-- Column -->
-            <div class="col-lg-8">
+            <div class="col-md-8">
                 <div class="card">
                     <div class="card-body">
-                        <div class="d-flex no-block">
-                            <div>
-                                <h5 class="card-title m-b-0">Sales Chart</h5>
-                            </div>
-                            <div class="ml-auto">
-                                <ul class="list-inline text-center font-12">
-                                    <li><i class="fa fa-circle text-success"></i> SITE A</li>
-                                    <li><i class="fa fa-circle text-info"></i> SITE B</li>
-                                    <li><i class="fa fa-circle text-primary"></i> SITE C</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="" id="sales-chart" style="height: 355px;"></div>
+                        <h4 class="card-title">Sales Ratio</h4>
+                        <div class="sales ct-charts mt-3"></div>
                     </div>
                 </div>
             </div>
-            <!-- Column -->
-            <div class="col-lg-4">
+            <div class="col-md-4">
                 <div class="card">
                     <div class="card-body">
-                        <div class="d-flex m-b-30 no-block">
-                            <h5 class="card-title m-b-0 align-self-center">Our Visitors</h5>
-                            <div class="ml-auto">
-                                <select class="custom-select b-0">
-                                    <option selected="">Today</option>
-                                    <option value="1">Tomorrow</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div id="visitor" style="height:260px; width:100%;"></div>
-                        <ul class="list-inline m-t-30 text-center font-12">
-                            <li><i class="fa fa-circle text-purple"></i> Tablet</li>
-                            <li><i class="fa fa-circle text-success"></i> Desktops</li>
-                            <li><i class="fa fa-circle text-info"></i> Mobile</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- ============================================================== -->
-        <!-- End Sales Chart -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Projects of the Month -->
-        <!-- ============================================================== -->
-        <div class="row">
-            <!-- Column -->
-            <div class="col-lg-8">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="d-flex">
-                            <div>
-                                <h5 class="card-title">Projects of the Month</h5>
-                            </div>
-                            <div class="ml-auto">
-                                <select class="custom-select b-0">
-                                    <option selected="">January</option>
-                                    <option value="1">February</option>
-                                    <option value="2">March</option>
-                                    <option value="3">April</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="table-responsive m-t-20 no-wrap">
-                            <table class="table vm no-th-brd pro-of-month">
-                                <thead>
-                                <tr>
-                                    <th colspan="2">Assigned</th>
-                                    <th>Name</th>
-                                    <th>Budget</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td style="width:50px;"><span class="round">S</span></td>
-                                    <td>
-                                        <h6>Sunil Joshi</h6><small class="text-muted">Web Designer</small></td>
-                                    <td>Elite Admin</td>
-                                    <td>$3.9K</td>
-                                </tr>
-                                <tr class="active">
-                                    <td><span class="round"><img src="{{ asset('admin') }}/assets/images/users/2.jpg" alt="user" width="50"></span></td>
-                                    <td>
-                                        <h6>Andrew</h6><small class="text-muted">Project Manager</small></td>
-                                    <td>Real Homes</td>
-                                    <td>$23.9K</td>
-                                </tr>
-                                <tr>
-                                    <td><span class="round round-success">B</span></td>
-                                    <td>
-                                        <h6>Bhavesh patel</h6><small class="text-muted">Developer</small></td>
-                                    <td>MedicalPro Theme</td>
-                                    <td>$12.9K</td>
-                                </tr>
-                                <tr>
-                                    <td><span class="round round-primary">N</span></td>
-                                    <td>
-                                        <h6>Nirav Joshi</h6><small class="text-muted">Frontend Eng</small></td>
-                                    <td>Elite Admin</td>
-                                    <td>$10.9K</td>
-                                </tr>
-                                <tr>
-                                    <td><span class="round round-warning">M</span></td>
-                                    <td>
-                                        <h6>Micheal Doe</h6><small class="text-muted">Content Writer</small></td>
-                                    <td>Helping Hands</td>
-                                    <td>$12.9K</td>
-                                </tr>
-                                </tbody>
-                            </table>
+                        <h5 class="card-title m-b-5">Referral Earnings</h5>
+                        <h3 class="font-light">$769.08</h3>
+                        <div class="m-t-20 text-center">
+                            <div id="earnings"></div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- Column -->
-            <!-- Column -->
-            <div class="col-lg-4">
                 <div class="card">
-                    <div class="up-img" style="background-image:url({{ asset('admin') }}/assets/images/big/img1.jpg)"></div>
                     <div class="card-body">
-                        <h5 class=" card-title">Business development of rules</h5>
-                        <span class="label label-info label-rounded">Technology</span>
-                        <p class="m-b-0 m-t-20">Titudin venenatis ipsum aciat. Vestibu ullamer quam. nenatis ipsum ac feugiat. Ibulum ullamcorper.</p>
-                        <div class="d-flex m-t-20">
-                            <a class="link" href="javascript:void(0)">Read more</a>
-                            <div class="ml-auto align-self-center">
-                                <a href="javascript:void(0)" class="link m-r-10"><i class="fa fa-heart-o"></i></a>
-                                <a href="javascript:void(0)" class="link m-r-10"><i class="fa fa-share-alt"></i></a>
+                        <h4 class="card-title m-b-0">Users</h4>
+                        <h2 class="font-light">35,658 <span class="font-16 text-success font-medium">+23%</span></h2>
+                        <div class="m-t-30">
+                            <div class="row text-center">
+                                <div class="col-6 border-right">
+                                    <h4 class="m-b-0">58%</h4>
+                                    <span class="font-14 text-muted">New Users</span>
+                                </div>
+                                <div class="col-6">
+                                    <h4 class="m-b-0">42%</h4>
+                                    <span class="font-14 text-muted">Repeat Users</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -167,80 +74,254 @@
             </div>
         </div>
         <!-- ============================================================== -->
-        <!-- End Projects of the Month -->
+        <!-- Email campaign chart -->
         <!-- ============================================================== -->
         <!-- ============================================================== -->
-        <!-- Notification And Feeds -->
+        <!-- Ravenue - page-view-bounce rate -->
         <!-- ============================================================== -->
         <div class="row">
-            <!-- Start Notification -->
-            <div class="col-lg-6 col-md-12">
-                <div class="card card-body mailbox">
-                    <h5 class="card-title">Notification</h5>
-                    <div class="message-center ps ps--theme_default ps--active-y" data-ps-id="a045fe3c-cb6e-028e-3a70-8d6ff0d7f6bd">
-                        <!-- Message -->
-                        <a href="#">
-                            <div class="btn btn-danger btn-circle"><i class="fa fa-link"></i></div>
-                            <div class="mail-contnet">
-                                <h5>Luanch Admin</h5> <span class="mail-desc">Just see the my new admin!</span> <span class="time">9:30 AM</span> </div>
-                        </a>
-                        <!-- Message -->
-                        <a href="#">
-                            <div class="btn btn-success btn-circle"><i class="fa fa-calendar-check-o"></i></div>
-                            <div class="mail-contnet">
-                                <h5>Event today</h5> <span class="mail-desc">Just a reminder that you have event</span> <span class="time">9:10 AM</span> </div>
-                        </a>
-                        <!-- Message -->
-                        <a href="#">
-                            <div class="btn btn-info btn-circle"><i class="fa fa-cog"></i></div>
-                            <div class="mail-contnet">
-                                <h5>Settings</h5> <span class="mail-desc">You can customize this template as you want</span> <span class="time">9:08 AM</span> </div>
-                        </a>
-                        <!-- Message -->
-                        <a href="#">
-                            <div class="btn btn-primary btn-circle"><i class="fa fa-user"></i></div>
-                            <div class="mail-contnet">
-                                <h5>Pavan kumar</h5> <span class="mail-desc">Just see the my admin!</span> <span class="time">9:02 AM</span> </div>
-                        </a>
+            <!-- column -->
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Latest Sales</h4>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                            <tr>
+                                <th class="border-top-0">NAME</th>
+                                <th class="border-top-0">STATUS</th>
+                                <th class="border-top-0">DATE</th>
+                                <th class="border-top-0">PRICE</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+
+                                <td class="txt-oflo">Elite admin</td>
+                                <td><span class="label label-success label-rounded">SALE</span> </td>
+                                <td class="txt-oflo">April 18, 2017</td>
+                                <td><span class="font-medium">$24</span></td>
+                            </tr>
+                            <tr>
+
+                                <td class="txt-oflo">Real Homes WP Theme</td>
+                                <td><span class="label label-info label-rounded">EXTENDED</span></td>
+                                <td class="txt-oflo">April 19, 2017</td>
+                                <td><span class="font-medium">$1250</span></td>
+                            </tr>
+                            <tr>
+
+                                <td class="txt-oflo">Ample Admin</td>
+                                <td><span class="label label-purple label-rounded">Tax</span></td>
+                                <td class="txt-oflo">April 19, 2017</td>
+                                <td><span class="font-medium">$1250</span></td>
+                            </tr>
+                            <tr>
+
+                                <td class="txt-oflo">Medical Pro WP Theme</td>
+                                <td><span class="label label-success label-rounded">Sale</span></td>
+                                <td class="txt-oflo">April 20, 2017</td>
+                                <td><span class="font-medium">-$24</span></td>
+                            </tr>
+                            <tr>
+
+                                <td class="txt-oflo">Hosting press html</td>
+                                <td><span class="label label-success label-rounded">SALE</span></td>
+                                <td class="txt-oflo">April 21, 2017</td>
+                                <td><span class="font-medium">$24</span></td>
+                            </tr>
+                            <tr>
+
+                                <td class="txt-oflo">Digital Agency PSD</td>
+                                <td><span class="label label-danger label-rounded">Tax</span> </td>
+                                <td class="txt-oflo">April 23, 2017</td>
+                                <td><span class="font-medium">-$14</span></td>
+                            </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
-            <!-- End Notification -->
-            <!-- Start Feeds -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- Ravenue - page-view-bounce rate -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Recent comment and chats -->
+        <!-- ============================================================== -->
+        <div class="row">
+            <!-- column -->
             <div class="col-lg-6">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Feeds</h5>
-                        <ul class="feeds">
-                            <li>
-                                <div class="bg-light-info"><i class="fa fa-bell-o"></i></div> You have 4 pending tasks. <span class="text-muted">Just Now</span></li>
-                            <li>
-                                <div class="bg-light-success"><i class="fa fa-server"></i></div> Server #1 overloaded.<span class="text-muted">2 Hours ago</span></li>
-                            <li>
-                                <div class="bg-light-warning"><i class="fa fa-shopping-cart"></i></div> New order received.<span class="text-muted">31 May</span></li>
-                            <li>
-                                <div class="bg-light-danger"><i class="fa fa-user"></i></div> New user registered.<span class="text-muted">30 May</span></li>
-                            <li>
-                                <div class="bg-light-inverse"><i class="fa fa-bell-o"></i></div> New Version just arrived. <span class="text-muted">27 May</span></li>
-                            <li>
-                                <div class="bg-light-info"><i class="fa fa-bell-o"></i></div> You have 4 pending tasks. <span class="text-muted">Just Now</span></li>
-                            <li>
-                                <div class="bg-light-danger"><i class="fa fa-user"></i></div> New user registered.<span class="text-muted">30 May</span></li>
-                            <li>
-                                <div class="bg-light-inverse"><i class="fa fa-bell-o"></i></div> New Version just arrived. <span class="text-muted">27 May</span></li>
-                            <li>
-                                <div class="bg-light-primary"><i class="fa fa-cog"></i></div> You have 4 pending tasks. <span class="text-muted">27 May</span></li>
-                        </ul>
+                        <h4 class="card-title">Recent Comments</h4>
+                    </div>
+                    <div class="comment-widgets" style="height:430px;">
+                        <!-- Comment Row -->
+                        <div class="d-flex flex-row comment-row m-t-0">
+                            <div class="p-2">
+                                <img src="{{ asset('admin') }}/assets/images/users/1.jpg" alt="user" width="50" class="rounded-circle">
+                            </div>
+                            <div class="comment-text w-100">
+                                <h6 class="font-medium">James Anderson</h6>
+                                <span class="m-b-15 d-block">Lorem Ipsum is simply dummy text of the printing and type setting industry. </span>
+                                <div class="comment-footer">
+                                    <span class="text-muted float-right">April 14, 2016</span>
+                                    <span class="label label-rounded label-primary">Pending</span>
+                                    <span class="action-icons">
+                                                <a href="javascript:void(0)">
+                                                    <i class="ti-pencil-alt"></i>
+                                                </a>
+                                                <a href="javascript:void(0)">
+                                                    <i class="ti-check"></i>
+                                                </a>
+                                                <a href="javascript:void(0)">
+                                                    <i class="ti-heart"></i>
+                                                </a>
+                                            </span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Comment Row -->
+                        <div class="d-flex flex-row comment-row">
+                            <div class="p-2">
+                                <img src="{{ asset('admin') }}/assets/images/users/4.jpg" alt="user" width="50" class="rounded-circle">
+                            </div>
+                            <div class="comment-text active w-100">
+                                <h6 class="font-medium">Michael Jorden</h6>
+                                <span class="m-b-15 d-block">Lorem Ipsum is simply dummy text of the printing and type setting industry. </span>
+                                <div class="comment-footer ">
+                                    <span class="text-muted float-right">April 14, 2016</span>
+                                    <span class="label label-success label-rounded">Approved</span>
+                                    <span class="action-icons active">
+                                                <a href="javascript:void(0)">
+                                                    <i class="ti-pencil-alt"></i>
+                                                </a>
+                                                <a href="javascript:void(0)">
+                                                    <i class="icon-close"></i>
+                                                </a>
+                                                <a href="javascript:void(0)">
+                                                    <i class="ti-heart text-danger"></i>
+                                                </a>
+                                            </span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Comment Row -->
+                        <div class="d-flex flex-row comment-row">
+                            <div class="p-2">
+                                <img src="{{ asset('admin') }}/assets/images/users/5.jpg" alt="user" width="50" class="rounded-circle">
+                            </div>
+                            <div class="comment-text w-100">
+                                <h6 class="font-medium">Johnathan Doeting</h6>
+                                <span class="m-b-15 d-block">Lorem Ipsum is simply dummy text of the printing and type setting industry. </span>
+                                <div class="comment-footer">
+                                    <span class="text-muted float-right">April 14, 2016</span>
+                                    <span class="label label-rounded label-danger">Rejected</span>
+                                    <span class="action-icons">
+                                                <a href="javascript:void(0)">
+                                                    <i class="ti-pencil-alt"></i>
+                                                </a>
+                                                <a href="javascript:void(0)">
+                                                    <i class="ti-check"></i>
+                                                </a>
+                                                <a href="javascript:void(0)">
+                                                    <i class="ti-heart"></i>
+                                                </a>
+                                            </span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Comment Row -->
+                        <div class="d-flex flex-row comment-row m-t-0">
+                            <div class="p-2">
+                                <img src="{{ asset('admin') }}/assets/images/users/2.jpg" alt="user" width="50" class="rounded-circle">
+                            </div>
+                            <div class="comment-text w-100">
+                                <h6 class="font-medium">Steve Jobs</h6>
+                                <span class="m-b-15 d-block">Lorem Ipsum is simply dummy text of the printing and type setting industry. </span>
+                                <div class="comment-footer">
+                                    <span class="text-muted float-right">April 14, 2016</span>
+                                    <span class="label label-rounded label-primary">Pending</span>
+                                    <span class="action-icons">
+                                                <a href="javascript:void(0)">
+                                                    <i class="ti-pencil-alt"></i>
+                                                </a>
+                                                <a href="javascript:void(0)">
+                                                    <i class="ti-check"></i>
+                                                </a>
+                                                <a href="javascript:void(0)">
+                                                    <i class="ti-heart"></i>
+                                                </a>
+                                            </span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <!-- End Feeds -->
+            <!-- column -->
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Temp Guide</h4>
+                        <div class="d-flex align-items-center flex-row m-t-30">
+                            <div class="display-5 text-info"><i class="wi wi-day-showers"></i> <span>73<sup>°</sup></span></div>
+                            <div class="m-l-10">
+                                <h3 class="m-b-0">Saturday</h3><small>Ahmedabad, India</small>
+                            </div>
+                        </div>
+                        <table class="table no-border mini-table m-t-20">
+                            <tbody>
+                            <tr>
+                                <td class="text-muted">Wind</td>
+                                <td class="font-medium">ESE 17 mph</td>
+                            </tr>
+                            <tr>
+                                <td class="text-muted">Humidity</td>
+                                <td class="font-medium">83%</td>
+                            </tr>
+                            <tr>
+                                <td class="text-muted">Pressure</td>
+                                <td class="font-medium">28.56 in</td>
+                            </tr>
+                            <tr>
+                                <td class="text-muted">Cloud Cover</td>
+                                <td class="font-medium">78%</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <ul class="row list-style-none text-center m-t-30">
+                            <li class="col-3">
+                                <h4 class="text-info"><i class="wi wi-day-sunny"></i></h4>
+                                <span class="d-block text-muted">09:30</span>
+                                <h3 class="m-t-5">70<sup>°</sup></h3>
+                            </li>
+                            <li class="col-3">
+                                <h4 class="text-info"><i class="wi wi-day-cloudy"></i></h4>
+                                <span class="d-block text-muted">11:30</span>
+                                <h3 class="m-t-5">72<sup>°</sup></h3>
+                            </li>
+                            <li class="col-3">
+                                <h4 class="text-info"><i class="wi wi-day-hail"></i></h4>
+                                <span class="d-block text-muted">13:30</span>
+                                <h3 class="m-t-5">75<sup>°</sup></h3>
+                            </li>
+                            <li class="col-3">
+                                <h4 class="text-info"><i class="wi wi-day-sprinkle"></i></h4>
+                                <span class="d-block text-muted">15:30</span>
+                                <h3 class="m-t-5">76<sup>°</sup></h3>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
         </div>
         <!-- ============================================================== -->
-        <!-- End Notification And Feeds -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- End Page Content -->
+        <!-- Recent comment and chats -->
         <!-- ============================================================== -->
     </div>
 @endsection

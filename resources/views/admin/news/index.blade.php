@@ -23,7 +23,7 @@
         @foreach($news as $item)
             <tr>
                 <th scope="row">{{$item->id}}</th>
-                <td><img width="75" src="/{{ env('URL_IMAGE_PRODUCTS') . $item->img }}"></td>
+                <td><img width="75" src="/{{ env('URL_IMAGE_NEWS') . $item->img }}"></td>
                 <td>{{$item->title}}</td>
                 <td><a class="btn btn-success btn-block" href="{{ route('news.edit', ['id' => $item->id]) }}">Edit</a></td>
                 <td>

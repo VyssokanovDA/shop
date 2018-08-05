@@ -1,5 +1,5 @@
 <header id="header"><!--header-->
-    <div class="header">
+    <div class="header2 text-cente">
         <div class="container">
             <div class="main-header">
                 <div class="carting">
@@ -19,7 +19,7 @@
 
             <!-- start header menu -->
             <ul class="megamenu skyblue">
-                <li class="active grid"><a class="color1" href="index.html">Home</a></li>
+                <li class="active grid"><a class="color1" href="/">Главная</a></li>
                 <li class="grid"><a href="#">Women</a>
                     <div class="megapanel">
                         <div class="row">
@@ -176,7 +176,7 @@
                     </div>
                 </li>
                 <li class="grid"><a href="about.html">ABOUT US</a></li>
-                <li class="grid"><a href="blog.html">BLOG</a></li>
+                <li class="grid"><a href="/news">Новости</a></li>
                 <li><a href="#">SHOP ONLINE</a>
                     <div class="megapanel">
                         <div class="row">
@@ -259,27 +259,12 @@
             </ul>
             <div class="clearfix"></div>
         </div>
-        <div class="caption">
+        {{--<div class="caption">
             <h1>FASHION AND CREATIVITY</h1>
             <p>Sed dapibus est a lorem dictum, id dignissim lacus fermentum. Nulla ut nibh in libero maximus pretium
                 Nunc vulputate vel tellus ac elementum. Duis nec tincidunt dolor, ac dictum eros.</p>
-        </div>
+        </div>--}}
     </div>
     <!--header-->
-    <div class="categoires">
-        <div class="container">
-            <a href="#"><div class="col-md-4 sections fashion-grid-a">
-                    <h4>Fashion</h4>
-                    <p>dignissim</p>
-                </div></a>
-            <a href="#"><div class="col-md-4 sections fashion-grid-b">
-                    <h4>Beauty</h4>
-                    <p>fermentum</p>
-                </div></a>
-            <a href="#"><div class="col-md-4 sections fashion-grid-c">
-                    <h4>Creativity</h4>
-                    <p>vulputate</p>
-                </div></a>
-        </div>
-    </div>
+
 </header><!--/header-->

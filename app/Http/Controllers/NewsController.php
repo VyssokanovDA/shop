@@ -68,10 +68,11 @@ class NewsController extends Controller
             //Путь где будет храниться наше изображение
             //public_path($str) - обращается к корню public клиентской части
             //принимает доп. параметр  пути внутри public
-            $location = public_path( env('URL_IMAGE_PRODUCTS') . $filename);
+            $location = public_path(env('URL_IMAGE_NEWS') . $filename);
             //локальное размещение
             //Режим и сохраняем в нашей папке
             Image::make($image)->resize(330, 380)->save($location);
+            // Image::make($image)->resize(50, 60)->save(env('URL_IMAGE_NEWS') . '/mini_' . $location);
             // $all = $request->all();
             $data['img'] = $filename;
         }
@@ -110,6 +111,8 @@ class NewsController extends Controller
     public function edit($id)
     {
         return view('admin.news.edit', [
+            //News::findOrFail();
+            //DB::select('news')->where(['id' => $id])->get();
             'novost' => News::find($id) //получаем единственную запись в помощью find по id
         ]);
     }
@@ -131,10 +134,10 @@ class NewsController extends Controller
             //Экземпляр объекта класса UploadFile
             $image = $request->file('img');
             $filename = time() . '_' . rand(1,9) . '.' . $image->getClientOriginalExtension();
-            $location = public_path( env('URL_IMAGE_PRODUCTS') . $filename);
+            $location = public_path( env('URL_IMAGE_NEWS') . $filename);
             Image::make($image)->resize(330, 380)->save($location);
             //удаляем старый файл из папки
-            // unset(env('URL_IMAGE_PRODUCTS') . $novost->img);
+            // unset(env('URL_IMAGE_NEWS') . $novost->img);
             $data['img'] = $filename;
         }
         try{

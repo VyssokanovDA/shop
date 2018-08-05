@@ -72,6 +72,22 @@
 @endsection--}}
 
 @section('content')
+    <div class="categoires">
+        <div class="container">
+            <a href="#"><div class="col-md-4 sections fashion-grid-a">
+                    <h4>Fashion</h4>
+                    <p>dignissim</p>
+                </div></a>
+            <a href="#"><div class="col-md-4 sections fashion-grid-b">
+                    <h4>Beauty</h4>
+                    <p>fermentum</p>
+                </div></a>
+            <a href="#"><div class="col-md-4 sections fashion-grid-c">
+                    <h4>Creativity</h4>
+                    <p>vulputate</p>
+                </div></a>
+        </div>
+    </div>
     <div class="features" id="features">
         <div class="container">
             <div class="tabs-box">
@@ -83,11 +99,14 @@
                 <div class="clearfix"> </div>
                 <div class="tab-grids">
                     <div id="tab1" class="tab-grid1">
+                    @forelse ($products as $product)
                         <a href="single.html">
                             <div class="product-grid">
-                                <div class="more-product-info"><span>NEW</span></div>
+                                <div class="more-product-info">
+                                    <span>NEW</span>
+                                </div>
                                 <div class="product-img b-link-stripe b-animate-go  thickbox">
-                                    <img src="{{ asset('shop') }}/images/bs1.jpg" class="img-responsive" alt=""/>
+                                    <img src="{{ env('URL_IMAGE_PRODUCTS') . $product->thumb }}" class="img-responsive" alt=""/>
                                     <div class="b-wrapper">
                                         <h4 class="b-animate b-from-left  b-delay03">
                                             <button class="btns">ORDER NOW</button>
@@ -97,125 +116,24 @@
                         </a>
                         <div class="product-info simpleCart_shelfItem">
                             <div class="product-info-cust">
-                                <h4>BELLE B&W</h4>
-                                <span class="item_price">$187.95</span>
+                                <h4>{{ $product->title }}</h4>
+                                <span class="item_price">{{ $product->price }} руб.</span>
                                 <input type="text" class="item_quantity" value="1" />
-                                <input type="button" class="item_add" value="ADD">
+                                {{--<input type="button" class="item_add" value="ADD">--}}
+                                <a href="{{ route('product.add', ['product_id' => $product->id]) }}" class="item_add"><i class="fa fa-shopping-cart"></i>Add</a>
                             </div>
-                            <div class="clearfix"> </div>
+                            <div class="clearfix"></div>
                         </div>
                     </div>
-
-                    <a href="single.html"><div class="product-grid">
-                            <div class="more-product-info"></div>
-                            <div class="product-img b-link-stripe b-animate-go  thickbox">
-                                <img src="{{ asset('shop') }}/images/bs2.jpg" class="img-responsive" alt=""/>
-                                <div class="b-wrapper">
-                                    <h4 class="b-animate b-from-left  b-delay03">
-                                        <button class="btns">ORDER NOW</button>
-                                    </h4>
-                                </div>
-                            </div>	</a>
-                    <div class="product-info simpleCart_shelfItem">
-                        <div class="product-info-cust">
-                            <h4>CLUBYORK</h4>
-                            <span class="item_price">$187.95</span>
-                            <input type="text" class="item_quantity" value="1" />
-                            <input type="button" class="item_add" value="ADD">
-                        </div>
-                        <div class="clearfix"> </div>
-                    </div>
-                </div>
-
-                <a href="single.html"><div class="product-grid">
-                        <div class="more-product-info"></div>
-                        <div class="product-img b-link-stripe b-animate-go  thickbox">
-                            <img src="{{ asset('shop') }}/images/bs3.jpg" class="img-responsive" alt=""/>
-                            <div class="b-wrapper">
-                                <h4 class="b-animate b-from-left  b-delay03">
-                                    <button class="btns">ORDER NOW</button>
-                                </h4>
-                            </div>
-                        </div>	</a>
-                <div class="product-info simpleCart_shelfItem">
-                    <div class="product-info-cust">
-                        <h4>ROADSTER</h4>
-                        <span class="item_price">$220.95</span>
-                        <input type="text" class="item_quantity" value="1" />
-                        <input type="button" class="item_add" value="ADD">
-                    </div>
-                    <div class="clearfix"> </div>
-                </div>
-            </div>
-
-            <a href="single.html"><div class="product-grid">
-                    <div class="more-product-info"></div>
-                    <div class="product-img b-link-stripe b-animate-go  thickbox">
-                        <img src="{{ asset('shop') }}/images/bs4.jpg" class="img-responsive" alt=""/>
-                        <div class="b-wrapper">
-                            <h4 class="b-animate b-from-left  b-delay03">
-                                <button class="btns">ORDER NOW</button>
-                            </h4>
-                        </div>
-                    </div></a>
-            <div class="product-info simpleCart_shelfItem">
-                <div class="product-info-cust">
-                    <h4>BLACKFLPS</h4>
-                    <span class="item_price">$150.95</span>
-                    <input type="text" class="item_quantity" value="1" />
-                    <input type="button" class="item_add" value="ADD">
-                </div>
-                <div class="clearfix"> </div>
-            </div>
-        </div>
-
-        <a href="single.html"><div class="product-grid">
-                <div class="more-product-info"><span>NEW</span></div>
-                <div class="product-img b-link-stripe b-animate-go  thickbox">
-                    <img src="{{ asset('shop') }}/images/bs5.jpg" class="img-responsive" alt=""/>
-                    <div class="b-wrapper">
-                        <h4 class="b-animate b-from-left  b-delay03">
-                            <button class="btns">ORDER NOW</button>
-                        </h4>
-                    </div>
-                </div>	</a>
-        <div class="product-info simpleCart_shelfItem">
-            <div class="product-info-cust">
-                <h4>RED CHECKS</h4>
-                <span class="item_price">$140.95</span>
-                <input type="text" class="item_quantity" value="1" />
-                <input type="button" class="item_add" value="ADD">
-            </div>
-            <div class="clearfix"> </div>
-        </div>
-    </div>
-
-    <a href="single.html"><div class="product-grid">
-            <div class="more-product-info"></div>
-            <div class="product-img b-link-stripe b-animate-go  thickbox">
-                <img src="{{ asset('shop') }}/images/bs6.jpg" class="img-responsive" alt=""/>
-                <div class="b-wrapper">
-                    <h4 class="b-animate b-from-left  b-delay03">
-                        <button class="btns">ORDER NOW</button>
-                    </h4>
-                </div>
-            </div>
-    </a>
-    <div class="product-info simpleCart_shelfItem">
-        <div class="product-info-cust">
-            <h4>NEW LOOK</h4>
-            <span class="item_price">$100.00</span>
-            <input type="text" class="item_quantity" value="1" />
-            <input type="button" class="item_add" value="ADD">
-        </div>
-        <div class="clearfix"> </div>
-    </div>
-    </div>
+                    @empty
+                        <h1>Товаров не обнаружено</h1>
+                    @endforelse
     <div class="clearfix"></div>
     </div>
 
     <div id="tab2" class="tab-grid2">
-        <a href="single.html"><div class="product-grid">
+        <a href="single.html">
+            <div class="product-grid">
                 <div class="more-product-info"></div>
                 <div class="product-img b-link-stripe b-animate-go  thickbox">
                     <img src="{{ asset('shop') }}/images/c1.jpg" class="img-responsive" alt=""/>
@@ -224,7 +142,8 @@
                             <button class="btns">ORDER NOW</button>
                         </h4>
                     </div>
-                </div></a>
+                </div>
+        </a>
         <div class="product-info simpleCart_shelfItem">
             <div class="product-info-cust">
                 <h4>NEWLOOK</h4>
@@ -444,7 +363,9 @@
             <h4>SISLEY</h4>
             <span class="item_price">$187.95</span>
             <input type="text" class="item_quantity" value="1" />
-            <input type="button" class="item_add" value="ADD">
+            {{--<input type="button" class="item_add" value="ADD">--}}
+            <a href="{{ route('product.add', ['product_id' => $product->id]) }}" class="item_add"><i class="fa fa-shopping-cart"></i>Add</a>
+
         </div>
         <div class="clearfix"> </div>
     </div>
@@ -496,3 +417,7 @@
     </div>
     </div>
 @endsection
+{{--
+    <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">{{ csrf_field() }}</form>
+--}}

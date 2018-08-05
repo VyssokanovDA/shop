@@ -18,7 +18,7 @@
 
         <div class="form-group">
             <label for="img">Картинка</label>
-            <img width="150" src="/{{ env('URL_IMAGE_PRODUCTS') . $novost->img }}" alt="">
+            <img width="150" src="/{{ env('URL_IMAGE_NEWS') . $novost->img }}" alt="">
             <input type="file" name="img" class="form-control" id="img" value="">
         </div>
 

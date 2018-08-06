@@ -11,7 +11,7 @@
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design"
     />
     <script src="{{ asset('shop') }}/js/jquery.min.js"></script>
-    <script src="{{ asset('shop') }}/js/simpleCart.min.js"> </script>
+    {{--<script src="{{ asset('shop') }}/js/simpleCart.min.js"> </script>--}}
     <!-- start menu -->
     <link href="{{ asset('shop') }}/css/megamenu.css" rel="stylesheet" type="text/css" media="all" />
     <script type="text/javascript" src="{{ asset('shop') }}/js/megamenu.js"></script>

@@ -40,4 +40,9 @@ class Cart
         $this->totalQty++;
         $this->totalPrice += $product->price;
     }
+    public function clear(){
+        $this->totalQty = 0;
+        $this->totalPrice = 0;
+        $this->items = [];
+    }
 }

@@ -25,10 +25,17 @@ class CartController extends Controller
         $oldCart = Session::has('cart') ? Session::get('cart') : null;
         //Cоздается экземпляр объекта из массива данных
         $cart = new Cart($oldCart);
-        //Добалвение товара в корзину
+        //Добавление товара в корзину
         $cart->add($product, $product->id);
-        //Кладем в сессию нашук корзину в сериализованном виде
+        //Кладем в сессию нашу корзину в сериализованном виде
         $request->session()->put('cart', $cart);
         return redirect()->route('home');
+    }
+    public function clearCart(Request $request){
+        $cart = Session::get('cart');
+        $cart -> clear();
+        $request->session()->put('cart', $cart);
+        return redirect()->route('home');
+
     }
 }

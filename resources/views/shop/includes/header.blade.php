@@ -9,8 +9,8 @@
                     <h3><a href="index.html">NEW FASHIONS</a></h3>
                 </div>
                 <div class="box_1">
-                    <a href="cart.html"><h3>Cart: <span class="simpleCart_total"></span> (<span id="simpleCart_quantity" class="simpleCart_quantity"></span> items)<img src="images/cart.png" alt=""/></h3></a>
-                    <p><a href="javascript:;" class="simpleCart_empty">empty cart</a></p>
+                    <a href="cart.html"><h3>Корзина: <span>{{Session::get('cart') -> totalPrice}} руб.</span> (<span>{{Session::get('cart') -> totalQty}}</span> шт.)<img src="{{ asset('shop') }}/images/cart.png" alt=""/></h3></a>
+                    <p><a href="{{ route('cart.clear') }}">Очистить корзину</a></p>
 
                 </div>
 
@@ -175,9 +175,9 @@
                         </div>
                     </div>
                 </li>
-                <li class="grid"><a href="about.html">ABOUT US</a></li>
+                <li class="grid"><a href="about.html">О НАС</a></li>
                 <li class="grid"><a href="/news">Новости</a></li>
-                <li><a href="#">SHOP ONLINE</a>
+                <li><a href="#">МАГАЗИН</a>
                     <div class="megapanel">
                         <div class="row">
                             <div class="col1">

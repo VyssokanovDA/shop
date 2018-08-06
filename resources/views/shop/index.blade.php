@@ -106,10 +106,10 @@
                                     <span>NEW</span>
                                 </div>
                                 <div class="product-img b-link-stripe b-animate-go  thickbox">
-                                    <img src="{{ env('URL_IMAGE_PRODUCTS') . $product->thumb }}" class="img-responsive" alt=""/>
+                                    <img src="{{ env('URL_IMAGE_PRODUCTS') . $product->thumb }}" height="450" alt=""/>
                                     <div class="b-wrapper">
                                         <h4 class="b-animate b-from-left  b-delay03">
-                                            <button class="btns">ORDER NOW</button>
+                                            <button class="btns">ЗАКАЗАТЬ</button>
                                         </h4>
                                     </div>
                                 </div>
@@ -120,7 +120,7 @@
                                 <span class="item_price">{{ $product->price }} руб.</span>
                                 <input type="text" class="item_quantity" value="1" />
                                 {{--<input type="button" class="item_add" value="ADD">--}}
-                                <a href="{{ route('product.add', ['product_id' => $product->id]) }}" class="item_add"><i class="fa fa-shopping-cart"></i>Add</a>
+                                <a href="{{ route('product.add', ['product_id' => $product->id]) }}" class="item_add"><i class="fa fa-shopping-cart"></i>Добавить в корзину</a>
                             </div>
                             <div class="clearfix"></div>
                         </div>

@@ -16,6 +16,7 @@ Auth::routes();
 //Главная страница
 Route::get('/', 'MainController@index')->name('home');
 Route::get('/news', 'MainController@getNews')->name('news');
+Route::resource('/singleBlog', 'SingleBlogController');
 //Route::get('/dashboard', 'AdminController@index')->name('admin');
 Route::group(['prefix' => 'dashboard'], function () {
     Route::group(['middleware' => 'auth'], function (){
@@ -37,6 +38,8 @@ Route::group(['prefix' => 'dashboard'], function () {
 
 /*Добавление товара в корзину,  где product_id - id товара из БД*/
 Route::get('/add-to-cart/{product_id}', 'CartController@addToCart')->name('product.add');
+/*Очистка корзины*/
+Route::get('/clear-cart', 'CartController@clearCart')->name('cart.clear');
 
 Route::group(['prefix' => 'test'], function (){
     //Список

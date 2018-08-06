@@ -100,7 +100,7 @@ class NewsController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
     /**
      * Отображает форму для редактирования ресурса

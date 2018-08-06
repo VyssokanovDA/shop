@@ -29,13 +29,19 @@ class CartController extends Controller
         $cart->add($product, $product->id);
         //Кладем в сессию нашу корзину в сериализованном виде
         $request->session()->put('cart', $cart);
-        return redirect()->route('home');
+        return back();
     }
     public function clearCart(Request $request){
         $cart = Session::get('cart');
         $cart -> clear();
         $request->session()->put('cart', $cart);
-        return redirect()->route('home');
+        return back();
 
+    }
+    public function show(){
+        $cart = Session::get('cart');
+        return view('shop.cart', [
+            'cart' => $cart //отдаем шаблону на рендер
+        ]);
     }
 }

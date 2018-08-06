@@ -40,6 +40,7 @@ Route::group(['prefix' => 'dashboard'], function () {
 Route::get('/add-to-cart/{product_id}', 'CartController@addToCart')->name('product.add');
 /*Очистка корзины*/
 Route::get('/clear-cart', 'CartController@clearCart')->name('cart.clear');
+Route::get('/show-cart', 'CartController@show')->name('cart.show');
 
 Route::group(['prefix' => 'test'], function (){
     //Список

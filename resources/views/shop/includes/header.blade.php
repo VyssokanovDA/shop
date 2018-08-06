@@ -6,10 +6,10 @@
                     <ul><li><a href="login.html"> LOGIN</a></li></ul>
                 </div>
                 <div class="logo">
-                    <h3><a href="index.html">NEW FASHIONS</a></h3>
+                    <h3><a href="/">МАГАЗИН ОДЕЖДЫ</a></h3>
                 </div>
                 <div class="box_1">
-                    <a href="cart.html"><h3>Корзина: <span>{{Session::get('cart') -> totalPrice}} руб.</span> (<span>{{Session::get('cart') -> totalQty}}</span> шт.)<img src="{{ asset('shop') }}/images/cart.png" alt=""/></h3></a>
+                    <a href="{{ route('cart.show') }}"><h3>Корзина: <span>{{Session::get('cart') -> totalPrice}} руб.</span> (<span>{{Session::get('cart') -> totalQty}}</span> шт.)<img src="{{ asset('shop') }}/images/cart.png" alt=""/></h3></a>
                     <p><a href="{{ route('cart.clear') }}">Очистить корзину</a></p>
 
                 </div>

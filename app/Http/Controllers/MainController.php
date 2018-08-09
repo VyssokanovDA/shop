@@ -21,8 +21,7 @@ class MainController extends BaseController
             //'news' => $news,
             'products' => $products,
             'menus' => $menus,
-            'categories' => $categories,
-            'title' => $categories->title
+            'categories' => $categories
         ]);
     }
 

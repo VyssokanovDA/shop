@@ -1,140 +1,112 @@
-<!-- ============================================================== -->
-<!-- Left Sidebar - style you can find in sidebar.scss  -->
-<!-- ============================================================== -->
-<div class="left-sidebar">
-    <h2>Category</h2>
-    <div class="panel-group category-products" id="accordian"><!--category-productsr-->
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#accordian" href="#sportswear">
-                        <span class="badge pull-right"><i class="fa fa-plus"></i></span>
-                        Sportswear
-                    </a>
-                </h4>
-            </div>
-            <div id="sportswear" class="panel-collapse collapse">
-                <div class="panel-body">
-                    <ul>
-                        <li><a href="#">Nike </a></li>
-                        <li><a href="#">Under Armour </a></li>
-                        <li><a href="#">Adidas </a></li>
-                        <li><a href="#">Puma</a></li>
-                        <li><a href="#">ASICS </a></li>
+<div class="rsidebar span_1_of_left">
+    <section  class="sky-form">
+        <div class="product_right">
+            <h3 class="m_2">Категории</h3>
+            @foreach($categories as $category)
+                <div class="tab1">
+                    <ul class="place">
+                        <li class="sort">{{ $category->title }}</li>
+                        <li class="by"><img src="images/do.png" alt=""></li>
+                        <div class="clearfix"> </div>
                     </ul>
+                    <div class="single-bottom">
+                        <a href="#"><p>sub category1</p></a>
+                        <a href="#"><p>sub category1</p></a>
+                        <a href="#"><p>sub category1</p></a>
+                        <a href="#"><p>sub category1</p></a>
+                    </div>
+                </div>
+            @endforeach
+            <!--script-->
+            <script>
+                $(document).ready(function(){
+                    $(".tab1 .single-bottom").hide();
+                    $(".tab2 .single-bottom").hide();
+                    $(".tab3 .single-bottom").hide();
+                    $(".tab4 .single-bottom").hide();
+                    $(".tab5 .single-bottom").hide();
+
+                    $(".tab1 ul").click(function(){
+                        $(".tab1 .single-bottom").slideToggle(300);
+                        $(".tab2 .single-bottom").hide();
+                        $(".tab3 .single-bottom").hide();
+                        $(".tab4 .single-bottom").hide();
+                        $(".tab5 .single-bottom").hide();
+                    })
+                    $(".tab2 ul").click(function(){
+                        $(".tab2 .single-bottom").slideToggle(300);
+                        $(".tab1 .single-bottom").hide();
+                        $(".tab3 .single-bottom").hide();
+                        $(".tab4 .single-bottom").hide();
+                        $(".tab5 .single-bottom").hide();
+                    })
+                    $(".tab3 ul").click(function(){
+                        $(".tab3 .single-bottom").slideToggle(300);
+                        $(".tab4 .single-bottom").hide();
+                        $(".tab5 .single-bottom").hide();
+                        $(".tab2 .single-bottom").hide();
+                        $(".tab1 .single-bottom").hide();
+                    })
+                    $(".tab4 ul").click(function(){
+                        $(".tab4 .single-bottom").slideToggle(300);
+                        $(".tab5 .single-bottom").hide();
+                        $(".tab3 .single-bottom").hide();
+                        $(".tab2 .single-bottom").hide();
+                        $(".tab1 .single-bottom").hide();
+                    })
+                    $(".tab5 ul").click(function(){
+                        $(".tab5 .single-bottom").slideToggle(300);
+                        $(".tab4 .single-bottom").hide();
+                        $(".tab3 .single-bottom").hide();
+                        $(".tab2 .single-bottom").hide();
+                        $(".tab1 .single-bottom").hide();
+                    })
+                });
+            </script>
+            <!-- script -->
+
+            <h4>DISCOUNTS</h4>
+            <div class="row row1 scroll-pane">
+                <div class="col col-4">
+                    <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i>Upto - 10% (20)</label>
+                </div>
+                <div class="col col-4">
+                    <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>40% - 50% (5)</label>
+                    <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>30% - 20% (7)</label>
+                    <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>10% - 5% (2)</label>
+                    <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Other(50)</label>
                 </div>
             </div>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#accordian" href="#mens">
-                        <span class="badge pull-right"><i class="fa fa-plus"></i></span>
-                        Mens
-                    </a>
-                </h4>
+    </section>
+    <section  class="sky-form">
+        <h4>Brand</h4>
+        <div class="row row1 scroll-pane">
+            <div class="col col-4">
+                <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i>Roadstar</label>
             </div>
-            <div id="mens" class="panel-collapse collapse">
-                <div class="panel-body">
-                    <ul>
-                        <li><a href="#">Fendi</a></li>
-                        <li><a href="#">Guess</a></li>
-                        <li><a href="#">Valentino</a></li>
-                        <li><a href="#">Dior</a></li>
-                        <li><a href="#">Versace</a></li>
-                        <li><a href="#">Armani</a></li>
-                        <li><a href="#">Prada</a></li>
-                        <li><a href="#">Dolce and Gabbana</a></li>
-                        <li><a href="#">Chanel</a></li>
-                        <li><a href="#">Gucci</a></li>
-                    </ul>
-                </div>
+            <div class="col col-4">
+                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>VAPH</label>
+                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Puma</label>
+                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Oakley</label>
+                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Manga</label>
+                <label class="checkbox"><input type="checkbox" name="checkbox" ><i></i>Pepe Jeans</label>
+                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Crocodile</label>
+                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Zumba</label>
             </div>
         </div>
-
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#accordian" href="#womens">
-                        <span class="badge pull-right"><i class="fa fa-plus"></i></span>
-                        Womens
-                    </a>
-                </h4>
+    </section>
+    <section  class="sky-form">
+        <h4>Price</h4>
+        <div class="row row1 scroll-pane">
+            <div class="col col-4">
+                <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i>$50.00 and Under (30)</label>
             </div>
-            <div id="womens" class="panel-collapse collapse">
-                <div class="panel-body">
-                    <ul>
-                        <li><a href="#">Fendi</a></li>
-                        <li><a href="#">Guess</a></li>
-                        <li><a href="#">Valentino</a></li>
-                        <li><a href="#">Dior</a></li>
-                        <li><a href="#">Versace</a></li>
-                    </ul>
-                </div>
+            <div class="col col-4">
+                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>$100.00 and Under (30)</label>
+                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>$200.00 and Under (30)</label>
+                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>$300.00 and Under (30)</label>
+                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>$400.00 and Under (30)</label>
             </div>
         </div>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 class="panel-title"><a href="#">Kids</a></h4>
-            </div>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 class="panel-title"><a href="#">Fashion</a></h4>
-            </div>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 class="panel-title"><a href="#">Households</a></h4>
-            </div>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 class="panel-title"><a href="#">Interiors</a></h4>
-            </div>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 class="panel-title"><a href="#">Clothing</a></h4>
-            </div>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 class="panel-title"><a href="#">Bags</a></h4>
-            </div>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 class="panel-title"><a href="#">Shoes</a></h4>
-            </div>
-        </div>
-    </div><!--/category-products-->
-
-    <div class="brands_products"><!--brands_products-->
-        <h2>Brands</h2>
-        <div class="brands-name">
-            <ul class="nav nav-pills nav-stacked">
-                <li><a href="#"> <span class="pull-right">(50)</span>Acne</a></li>
-                <li><a href="#"> <span class="pull-right">(56)</span>Grüne Erde</a></li>
-                <li><a href="#"> <span class="pull-right">(27)</span>Albiro</a></li>
-                <li><a href="#"> <span class="pull-right">(32)</span>Ronhill</a></li>
-                <li><a href="#"> <span class="pull-right">(5)</span>Oddmolly</a></li>
-                <li><a href="#"> <span class="pull-right">(9)</span>Boudestijn</a></li>
-                <li><a href="#"> <span class="pull-right">(4)</span>Rösch creative culture</a></li>
-            </ul>
-        </div>
-    </div><!--/brands_products-->
-
-    <div class="price-range"><!--price-range-->
-        <h2>Price Range</h2>
-        <div class="well text-center">
-            <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="600" data-slider-step="5" data-slider-value="[250,450]" id="sl2" ><br />
-            <b class="pull-left">$ 0</b> <b class="pull-right">$ 600</b>
-        </div>
-    </div><!--/price-range-->
-
-    <div class="shipping text-center"><!--shipping-->
-        <img src="{{ asset('shop') }}/images/home/shipping.jpg" alt="" />
-    </div><!--/shipping-->
-
+    </section>
 </div>

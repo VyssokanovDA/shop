@@ -32,9 +32,11 @@ class CartController extends Controller
         return back();
     }
     public function clearCart(Request $request){
-        $cart = Session::get('cart');
+        $oldCart = Session::has('cart') ? Session::get('cart') : null;
+        $cart = new Cart($oldCart);
         $cart -> clear();
         $request->session()->put('cart', $cart);
+        Session::forget('cart');
         return back();
 
     }
@@ -43,5 +45,40 @@ class CartController extends Controller
         return view('shop.cart', [
             'cart' => $cart //отдаем шаблону на рендер
         ]);
+    }
+
+    public function getReduceByOne($id){
+        $oldCart = Session::has('cart') ? Session::get('cart') : null;
+        $cart = new Cart($oldCart);
+        $cart->reduceByOne($id);
+        if(count($cart->items) > 0){
+            Session::put('cart', $cart);
+        }else{
+            Session::forget('cart');
+        }
+        return redirect()->route('cart.show');
+    }
+
+    public function getIncreaseByOne($id){
+        $oldCart = Session::has('cart') ? Session::get('cart') : null;
+        $cart = new Cart($oldCart);
+        $cart->increaseByOne($id);
+        if(count($cart->items) > 0){
+            Session::put('cart', $cart);
+        }else{
+            Session::forget('cart');
+        }
+        return redirect()->route('cart.show');
+    }
+    public function getRemoveItem($id){
+        $oldCart = Session::has('cart') ? Session::get('cart') : null;
+        $cart = new Cart($oldCart);
+        $cart->removeItem($id);
+        if(count($cart->items) > 0){
+            Session::put('cart', $cart);
+        }else{
+            Session::forget('cart');
+        }
+        return redirect()->route('cart.show');
     }
 }

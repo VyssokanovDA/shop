@@ -6,7 +6,7 @@
     <div class="cart">
         <div class="container">
             <ol class="breadcrumb">
-                <li><a href="men.html">Home</a></li>
+                <li><a href="/">Home</a></li>
                 <li class="active">Cart</li>
             </ol>
             <div class="cart-top">
@@ -14,18 +14,11 @@
             </div>
 
             <div class="col-md-9 cart-items">
+                @if(Session::has('cart'))
                 <h2>Моя корзина ({{ $cart->totalQty }})</h2>
-                {{--<script>$(document).ready(function(c) {
-                        $('.close1').on('click', function(c){
-                            $('.cart-header').fadeOut('slow', function(c){
-                                $('.cart-header').remove();
-                            });
-                        });
-                    });
-                </script>--}}
-                @forelse ($cart->items as $thing)
+                    @foreach ($cart->items as $thing)
                     <div class="cart-header">
-                        <div class="close1"> </div>
+                        <a href="{{ route('product.remove', ['id' => $thing['item']->id]) }}"><div class="close1"> </div></a>
                         <div class="cart-sec">
                             <div class="cart-item cyc">
                                 <img src="{{ env('URL_IMAGE_PRODUCTS') . $thing['item']->thumb }}"/>
@@ -35,18 +28,21 @@
                                 <h4>{{ $thing['item']->price }}<span> руб. </span></h4>
                                 <p class="qty">Количество ::</p>
                                 <input min="1" type="number" id="quantity" name="quantity" value="{{ $thing['qty'] }}" class="form-control input-small">
+                                <a class="cart_quantity_up" href="{{ route('product.increaseByOne', ['id' => $thing['item']->id]) }}"> + </a>
+                                <a class="cart_quantity_down" href="{{ route('product.reduceByOne', ['id' => $thing['item']->id]) }}"> - </a>
                             </div>
                             <div class="clearfix"></div>
                             <div class="delivery">
-                                <p>Service Charges:: Rs.50.00</p>
+                                <p>Всего за товар {{ $thing['price'] }}</p>
                                 <span>Delivered in 2-3 bussiness days</span>
                                 <div class="clearfix"></div>
                             </div>
                         </div>
                     </div>
-                @empty
+                    @endforeach
+                        @else
                     <h1>Корзина пуста</h1>
-                @endforelse
+                        @endif
             </div>
 
             <div class="col-md-3 cart-total">
@@ -54,17 +50,17 @@
                 <div class="price-details">
                     <h3>Price Details</h3>
                     <span>Total</span>
-                    <span class="total">350.00</span>
+                    <span class="total">{{ Session::has('cart') ? $cart->totalPrice : null }}</span>
                     <span>Discount</span>
                     <span class="total">---</span>
-                    <span>Delivery Charges</span>
-                    <span class="total">100.00</span>
+                    {{--<span>Delivery Charges</span>
+                    <span class="total">100.00</span>--}}
                     <div class="clearfix"></div>
                 </div>
                 <h4 class="last-price">TOTAL</h4>
-                <span class="total final">{{ $cart->totalPrice }}</span>
+                <span class="total final">{{ Session::has('cart') ? $cart->totalPrice : null }}</span>
                 <div class="clearfix"></div>
-                <a class="order" href="#">Place Order</a>
+                <a class="order" href="{{ route('get.checkout') }}">Оформить заказ</a>
                 <div class="total-item">
                     <h3>OPTIONS</h3>
                     <h4>COUPONS</h4>

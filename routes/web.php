@@ -17,7 +17,8 @@ Auth::routes();
 Route::get('/', 'MainController@index')->name('home');
 Route::get('/news', 'MainController@getNews')->name('news');
 Route::get('/products', 'MainController@getProducts')->name('products');
-Route::resource('/singleBlog', 'SingleBlogController');
+Route::resource('/singleBlog', 'NewsController');
+Route::resource('/single', 'ProductController');
 //Route::get('/dashboard', 'AdminController@index')->name('admin');
 Route::group(['prefix' => 'dashboard'], function () {
     Route::group(['middleware' => 'auth'], function (){

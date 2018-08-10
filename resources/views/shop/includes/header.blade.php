@@ -20,100 +20,18 @@
             <!-- start header menu -->
             <ul class="megamenu skyblue">
                 <li class="active grid"><a class="color1" href="/">Главная</a></li>
-                <li class="grid"><a href="{{ route('products') }}">Товары по категориям</a></li>
+                <li class="grid"><a href="{{ route('products') }}">Товары</a></li>
                 <li class="grid"><a href="/news">Новости</a></li>
                 @if(Auth::check())
-                    <li class="grid"><a href="{{ route('user.profile') }}">Профиль</a></li>
-                    <li><a href="#">ВЫХОД</a></li>
+                    <li class="grid"><a href="{{ route('user.profile') }}">Профиль {{ Auth::user()->name }}</a></li>
+                    <li><a href="{{ route('logout') }}">ВЫХОД</a></li>
                         @else
                     <li class="grid"><a href="{{ route('login') }}">Войти</a></li>
+                    <li class="grid"><a href="{{ route('register') }}">Регистрация</a></li>
                     @endif
-                    {{--<div class="megapanel">
-                        <div class="row">
-                            <div class="col1">
-                                <div class="h_nav">
-                                    <h4>shop</h4>
-                                    <ul>
-                                        <li><a href="shop.html">new arrivals</a></li>
-                                        <li><a href="shop.html">men</a></li>
-                                        <li><a href="shop.html">women</a></li>
-                                        <li><a href="shop.html">accessories</a></li>
-                                        <li><a href="shop.html">kids</a></li>
-                                        <li><a href="shop.html">brands</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col1">
-                                <div class="h_nav">
-                                    <h4>help</h4>
-                                    <ul>
-                                        <li><a href="shop.html">trends</a></li>
-                                        <li><a href="shop.html">sale</a></li>
-                                        <li><a href="shop.html">style videos</a></li>
-                                        <li><a href="shop.html">accessories</a></li>
-                                        <li><a href="shop.html">kids</a></li>
-                                        <li><a href="shop.html">style videos</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col1">
-                                <div class="h_nav">
-                                    <h4>Products</h4>
-                                    <ul>
-                                        <li><a href="shop.html">trends</a></li>
-                                        <li><a href="shop.html">sale</a></li>
-                                        <li><a href="shop.html">style videos</a></li>
-                                        <li><a href="shop.html">accessories</a></li>
-                                        <li><a href="shop.html">kids</a></li>
-                                        <li><a href="shop.html">style videos</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col1">
-                                <div class="h_nav">
-                                    <h4>my company</h4>
-                                    <ul>
-                                        <li><a href="shop.html">trends</a></li>
-                                        <li><a href="shop.html">sale</a></li>
-                                        <li><a href="shop.html">style videos</a></li>
-                                        <li><a href="shop.html">accessories</a></li>
-                                        <li><a href="shop.html">kids</a></li>
-                                        <li><a href="shop.html">style videos</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col1">
-                                <div class="h_nav">
-                                    <h4>popular</h4>
-                                    <ul>
-                                        <li><a href="shop.html">new arrivals</a></li>
-                                        <li><a href="shop.html">men</a></li>
-                                        <li><a href="shop.html">women</a></li>
-                                        <li><a href="shop.html">accessories</a></li>
-                                        <li><a href="shop.html">kids</a></li>
-                                        <li><a href="shop.html">style videos</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col2"></div>
-                            <div class="col1"></div>
-                            <div class="col1"></div>
-                            <div class="col1"></div>
-                            <div class="col1"></div>
-                        </div>
-                    </div>--}}
-
-
             </ul>
             <div class="clearfix"></div>
         </div>
-        {{--<div class="caption">
-            <h1>FASHION AND CREATIVITY</h1>
-            <p>Sed dapibus est a lorem dictum, id dignissim lacus fermentum. Nulla ut nibh in libero maximus pretium
-                Nunc vulputate vel tellus ac elementum. Duis nec tincidunt dolor, ac dictum eros.</p>
-        </div>--}}
     </div>
     <!--header-->
 

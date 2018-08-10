@@ -46,13 +46,7 @@ class SingleBlogController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)    {
-        $news = News::all();
-        $users = User::all();
-        return view('shop.single_blog', [
-            'news' => $news,
-            'users' => $users,
-            'blog' => News::find($id) //получаем единственную запись в помощью find по id
-        ]);
+
     }
 
     /**

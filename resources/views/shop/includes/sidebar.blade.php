@@ -5,7 +5,7 @@
             @foreach($categories as $category)
                 <div class="tab1">
                     <ul class="place">
-                        <li class="sort">{{ $category->title }}</li>
+                        <a href="{{ route('client.category', ['alias' => $category->alias]) }}"><li class="sort">{{ $category->title }}</li></a>
                         <li class="by"><img src="images/do.png" alt=""></li>
                         <div class="clearfix"> </div>
                     </ul>
@@ -79,19 +79,12 @@
             </div>
     </section>
     <section  class="sky-form">
-        <h4>Brand</h4>
+        <h4>Бренды</h4>
         <div class="row row1 scroll-pane">
             <div class="col col-4">
-                <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i>Roadstar</label>
-            </div>
-            <div class="col col-4">
-                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>VAPH</label>
-                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Puma</label>
-                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Oakley</label>
-                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Manga</label>
-                <label class="checkbox"><input type="checkbox" name="checkbox" ><i></i>Pepe Jeans</label>
-                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Crocodile</label>
-                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Zumba</label>
+                @foreach($brands as $brand)
+                    <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>{{ $brand->title }}</label>
+                @endforeach
             </div>
         </div>
     </section>

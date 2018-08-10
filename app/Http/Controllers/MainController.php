@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Brand;
 use App\Cart;
 use App\Category;
 use App\Menu;
@@ -29,11 +30,13 @@ class MainController extends BaseController
         $products = Product::all();
         $menus = Menu::all();
         $categories = Category::all();
+        $brands = Brand::all();
         return view('shop.products', [
             //'news' => $news,
             'products' => $products,
             'menus' => $menus,
-            'categories' => $categories
+            'categories' => $categories,
+            'brands' => $brands
         ]);
     }
     public function getNews(){

@@ -100,7 +100,7 @@
                 <div class="tab-grids">
                     <div id="tab1" class="tab-grid1">
                     @forelse ($products as $product)
-                        <a href="single.html">
+                        <a href="{{ route('single.show', ['id' => $product->id]) }}">
                             <div class="product-grid">
                                 <div class="more-product-info">
                                     <span>NEW</span>

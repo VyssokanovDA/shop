@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Brand;
+use App\Category;
+use App\Product;
+use App\User;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -45,7 +49,17 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        //
+        $users = User::all();
+        $single = Product::find($id);
+        $category = Category::find($single->category_id);
+        $brand = Brand::find($single->brand_id);
+        //dd($category);
+        return view('shop.single', [
+            'users' => $users,
+            'single' => $single, //получаем единственную запись в помощью find по id
+            'category' => $category,
+            'brand' => $brand
+        ]);
     }
 
     /**

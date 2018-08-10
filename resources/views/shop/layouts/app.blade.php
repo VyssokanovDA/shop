@@ -3,6 +3,7 @@
 <head>
     <title>@yield('title')</title>
     <link href="{{ asset('shop') }}/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="{{ asset('shop') }}/css/form.css" rel="stylesheet" type="text/css" media="all" />
     <link href="{{ asset('shop') }}/css/style.css" rel="stylesheet" type="text/css" media="all" />
     <link rel="stylesheet" type="text/css" href="{{ asset('shop') }}/css/component.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1">

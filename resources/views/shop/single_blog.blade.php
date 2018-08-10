@@ -7,8 +7,8 @@
         <div class="container">
             <div class="col-md-9 blog-sec-img">
                 <ol class="breadcrumb">
-                    <li><a href="index.html">Home</a></li>
-                    <li class="active">Blog</li>
+                    <li><a href="/">Главная</a></li>
+                    <li class="active">Новость</li>
                 </ol>
                 <div class="blog-sec-info">
                     <h2>{{ $blog->title }}</h2>

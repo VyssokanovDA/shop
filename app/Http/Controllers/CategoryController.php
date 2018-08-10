@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Brand;
 use App\Category;
 use App\Menu;
 use App\News;
@@ -89,15 +90,19 @@ class CategoryController extends Controller
         $news = News::orderBy('id', 'desc')->get();
         $menus = Menu::all();
         $categories = Category::all();
-        $category = Category::find(1)->where('alias', $alias)->first();
+        $brands = Brand::all();
+        //dump($alias);
+        $category = Category::where('alias', $alias)->first();
         $products = Product::where('category_id', $category->id)->paginate(3);
         //dump($products);
-        return view('shop.category', [
+        return view('shop.products', [
             'news'=> $news,
             'menus' => $menus,
             'category' => $category,
             'categories' => $categories,
-            'products' => $products
+            'products' => $products,
+            'alias' => $alias,
+            'brands' => $brands
         ]);
     }
 }

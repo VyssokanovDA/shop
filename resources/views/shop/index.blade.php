@@ -118,7 +118,7 @@
                             <div class="product-info-cust">
                                 <h4>{{ $product->title }}</h4>
                                 <span class="item_price">{{ $product->price }} руб.</span>
-                                <input type="text" class="item_quantity" value="1" />
+                                <input type="text" class="iinm_quantity" value="1" />
                                 {{--<input type="button" class="item_add" value="ADD">--}}
                                 <a href="{{ route('product.add', ['product_id' => $product->id]) }}" class="item_add"><i class="fa fa-shopping-cart"></i>Добавить в корзину</a>
                             </div>

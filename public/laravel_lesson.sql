@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Авг 14 2018 г., 00:19
+-- Время создания: Авг 14 2018 г., 02:15
 -- Версия сервера: 5.7.20
 -- Версия PHP: 7.0.26
 
@@ -94,8 +94,11 @@ CREATE TABLE `menus` (
 --
 
 INSERT INTO `menus` (`id`, `title`, `path`, `introtext`, `created_at`, `updated_at`) VALUES
-(1, 'Главная', '/', 'Главная страница сайта с товарами', NULL, NULL),
-(2, 'Новости', '/news', 'Страница с новостями', NULL, NULL);
+(3, 'Главная', '/', 'Главная страница сайта с товарами', NULL, NULL),
+(4, 'Новости', '/dashboard/news', 'Страница с новостями', NULL, NULL),
+(5, 'Товары', '/dashboard/products', 'Редактирование товаров', NULL, NULL),
+(6, 'Категории', '/dashboard/category', 'Редактирование категорий', NULL, NULL),
+(7, 'Бренды', '/dashboard/brands', 'Редактирование брендов', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -329,13 +332,13 @@ ALTER TABLE `brands`
 -- AUTO_INCREMENT для таблицы `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT для таблицы `menus`
 --
 ALTER TABLE `menus`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT для таблицы `migrations`
@@ -347,7 +350,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT для таблицы `news`
 --
 ALTER TABLE `news`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT для таблицы `orders`

@@ -1,4 +1,4 @@
-{{--@extends('shop.layouts.app')--}}
+@extends('shop.layouts.app')
 @section('title')
     Оформление заказа
 @endsection

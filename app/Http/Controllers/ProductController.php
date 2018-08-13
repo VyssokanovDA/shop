@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Brand;
 use App\Category;
+use App\Menu;
 use App\MyHelpers;
 use App\Product;
 use App\User;
@@ -12,7 +13,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Intervention\Image\Facades\Image;
 
-class ProductController extends Controller
+class ProductController extends BaseController
 {
     /**
      * Display a listing of the resource.
@@ -22,8 +23,10 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::all();
+        $menus = Menu::all();
         return view('admin.products.index', [
-            'products' => $products //отдаем шаблону на рендер
+            'products' => $products, //отдаем шаблону на рендер
+            'menus' => $menus
         ]);
     }
 
@@ -38,7 +41,8 @@ class ProductController extends Controller
         $brands = Brand::all();
         return view('admin.products.create', [
             'categories' => $categories,
-            'brands' => $brands
+            'brands' => $brands,
+            'menus' => Menu::all()
         ]);
     }
 
@@ -120,7 +124,8 @@ class ProductController extends Controller
             'users' => $users,
             'single' => $single, //получаем единственную запись в помощью find по id
             'category' => $category,
-            'brand' => $brand
+            'brand' => $brand,
+            'menus' => Menu::all()
         ]);
     }
 
@@ -137,7 +142,8 @@ class ProductController extends Controller
         return view('admin.products.edit', [
             'product' => Product::find($id), //получаем единственную запись в помощью find по id
             'categories' => $categories,
-            'brands' => $brands
+            'brands' => $brands,
+            'menus' => Menu::all()
         ]);
     }
 

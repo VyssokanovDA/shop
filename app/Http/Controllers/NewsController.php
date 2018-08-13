@@ -1,5 +1,6 @@
 <?php
 namespace App\Http\Controllers;
+use App\Menu;
 use App\MyHelpers;
 use App\News;
 use App\User;
@@ -8,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Intervention\Image\Facades\Image;
 
-class NewsController extends Controller
+class NewsController extends BaseController
 {
     /**
      * Список ресурсов.
@@ -20,8 +21,10 @@ class NewsController extends Controller
         //Получаем все новости из БД
         //$news = News::all();
         $news = News::orderBy('id', 'desc')->get();
+        $menus = Menu::all();
         return view('admin.news.index', [
-            'news' => $news //отдаем шаблону на рендер
+            'news' => $news, //отдаем шаблону на рендер
+            'menus' => $menus
         ]);
     }
     /**
@@ -31,7 +34,10 @@ class NewsController extends Controller
      */
     public function create()
     {
-        return view('admin.news.create');
+        $menus = Menu::all();
+        return view('admin.news.create', [
+            'menus' => $menus
+        ]);
     }
     /**
      * Обработчик запроса на созадние ресурса.
@@ -102,8 +108,10 @@ class NewsController extends Controller
     {
         $news = News::all();
         $users = User::all();
+        $menus = Menu::all();
         return view('shop.single_blog', [
             'news' => $news,
+            'menus' => $menus,
             'users' => $users,
             'blog' => News::find($id) //получаем единственную запись в помощью find по id
         ]);
@@ -116,10 +124,12 @@ class NewsController extends Controller
      */
     public function edit($id)
     {
+        $menus = Menu::all();
         return view('admin.news.edit', [
             //News::findOrFail();
             //DB::select('news')->where(['id' => $id])->get();
-            'novost' => News::find($id) //получаем единственную запись в помощью find по id
+            'novost' => News::find($id), //получаем единственную запись в помощью find по id
+            'menus' => $menus
         ]);
     }
     /**

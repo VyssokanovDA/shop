@@ -18,8 +18,23 @@ class MenuTableSeeder extends Seeder
         ]);
         DB::table('menus')->insert([
             'title' => 'Новости',
-            'path' => '/news',
+            'path' => '/dashboard/news',
             'introtext' => 'Страница с новостями'
+        ]);
+        DB::table('menus')->insert([
+            'title' => 'Товары',
+            'path' => '/dashboard/products',
+            'introtext' => 'Редактирование товаров'
+        ]);
+        DB::table('menus')->insert([
+            'title' => 'Категории',
+            'path' => '/dashboard/category',
+            'introtext' => 'Редактирование категорий'
+        ]);
+        DB::table('menus')->insert([
+            'title' => 'Бренды',
+            'path' => '/dashboard/brands',
+            'introtext' => 'Редактирование брендов'
         ]);
     }
 }

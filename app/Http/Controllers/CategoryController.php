@@ -93,7 +93,7 @@ class CategoryController extends Controller
         $brands = Brand::all();
         //dump($alias);
         $category = Category::where('alias', $alias)->first();
-        $products = Product::where('category_id', $category->id)->paginate(3);
+        $products = Product::where('category_id', $category->id)->get();
         //dump($products);
         return view('shop.products', [
             'news'=> $news,
